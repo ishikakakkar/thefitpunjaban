@@ -26,6 +26,7 @@ summary{cursor:pointer}
 .seg label:has(input:checked){background:#F5E27A;color:#0F1E33}
 .seg label:has(input:focus-visible){outline:2px solid #FFFFFF;outline-offset:2px}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+@media (max-width: 600px){.coach-strip{grid-template-columns:none !important;grid-auto-flow:column;grid-auto-columns:64%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.coach-strip>figure{scroll-snap-align:start}}
 </style>
 </head>
 <body>
@@ -117,6 +118,27 @@ DM @thefitpunjaban</a>
 <p style="margin: 0; color: #33405A">In the corporate world I watched people slowly lose their physical and mental health to work. I was one of them.</p>
 <p style="margin: 0; color: #33405A">Now I help people with stressful jobs reach the fitness they want, lose the extra kilos and feel energetic again. No extremes, just a sustainable plan that's easy to follow, even in your busiest weeks.</p>
 <p style="margin: 0; color: #33405A">On Instagram I share easy, yummy recipe ideas and bite-sized nutrition tips to keep you motivated along the way.</p>
+<div style="display: flex; flex-direction: column; gap: 12px; padding-top: 4px">
+<p style="margin: 0; font-family: 'Caveat Brush', cursive; font-size: 30px; line-height: 1.1; color: #2E5E3E">I practise what I coach.</p>
+<div class="coach-strip" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+<figure style="min-width: 0; margin: 0; position: relative; aspect-ratio: 4 / 5; border-radius: 16px; overflow: hidden; background: #ECE8E0">
+<video id="strength-video" src="assets/strength-deadlift.mp4" poster="assets/strength-deadlift.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Ishika lifting a loaded barbell in a deadlift" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 75%"></video>
+<button type="button" data-video-toggle="strength-video" aria-label="Pause video" style="position: absolute; top: 8px; right: 8px; width: 40px; height: 40px; border: 0; border-radius: 999px; background: rgba(15, 30, 51, 0.72); color: #FFFFFF; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0">
+<svg data-icon="pause" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg>
+<svg data-icon="play" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display: none"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"></path></svg>
+</button>
+<figcaption style="position: absolute; left: 8px; bottom: 10px; background: #F5E27A; color: #0F1E33; font-family: 'Bebas Neue', Impact, sans-serif; font-size: 18px; letter-spacing: 0.05em; line-height: 1.2; padding: 3px 10px 1px; transform: rotate(-2deg)">Strength</figcaption>
+</figure>
+<figure style="min-width: 0; margin: 0; position: relative; aspect-ratio: 4 / 5; border-radius: 16px; overflow: hidden; background: #ECE8E0">
+<img src="assets/mobility-yoga.jpg" alt="Ishika balancing in a yoga pose on a mat, holding her raised foot" width="600" height="1068" loading="lazy" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%">
+<figcaption style="position: absolute; left: 8px; bottom: 10px; background: #F5E27A; color: #0F1E33; font-family: 'Bebas Neue', Impact, sans-serif; font-size: 18px; letter-spacing: 0.05em; line-height: 1.2; padding: 3px 10px 1px; transform: rotate(-2deg)">Mobility</figcaption>
+</figure>
+<figure style="min-width: 0; margin: 0; position: relative; aspect-ratio: 4 / 5; border-radius: 16px; overflow: hidden; background: #ECE8E0">
+<img src="assets/mindfulness-beach.jpg" alt="Ishika kneeling on the beach at sunset, eyes closed" width="600" height="1067" loading="lazy" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 35% 60%">
+<figcaption style="position: absolute; left: 8px; bottom: 10px; background: #F5E27A; color: #0F1E33; font-family: 'Bebas Neue', Impact, sans-serif; font-size: 18px; letter-spacing: 0.05em; line-height: 1.2; padding: 3px 10px 1px; transform: rotate(-2deg)">Mindfulness</figcaption>
+</figure>
+</div>
+</div>
 <a href="https://www.instagram.com/thefitpunjaban/" style="font-weight: 700; padding: 10px 0; align-self: flex-start">Follow @thefitpunjaban on Instagram</a>
 </div>
 </div>
@@ -144,27 +166,6 @@ DM @thefitpunjaban</a>
 <div style="flex: 1 1 240px; box-sizing: border-box; background: #24402F; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
 <h3 style="margin: 0; font-family: 'Bebas Neue', Impact, sans-serif; font-weight: 400; font-size: 30px; line-height: 1.05; letter-spacing: 0.02em">Fat loss and fitness</h3>
 <p style="margin: 0; color: #D6DED5">Steady, sustainable progress that supports your training instead of draining it.</p>
-</div>
-</div>
-<div style="display: flex; flex-direction: column; gap: 20px">
-<p style="margin: 0; font-family: 'Caveat Brush', cursive; font-size: 36px; line-height: 1.1; color: #F5E27A">I practise what I coach.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 20px">
-<figure style="flex: 1 1 240px; min-width: 0; margin: 0; position: relative; aspect-ratio: 4 / 5; border-radius: 20px; overflow: hidden; background: #24402F">
-<video id="strength-video" src="assets/strength-deadlift.mp4" poster="assets/strength-deadlift.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Ishika lifting a loaded barbell in a deadlift" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 75%"></video>
-<button type="button" data-video-toggle="strength-video" aria-label="Pause video" style="position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; border: 0; border-radius: 999px; background: rgba(15, 30, 51, 0.72); color: #FFFFFF; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0">
-<svg data-icon="pause" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg>
-<svg data-icon="play" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display: none"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"></path></svg>
-</button>
-<figcaption style="position: absolute; left: 14px; bottom: 16px; background: #F5E27A; color: #0F1E33; font-family: 'Bebas Neue', Impact, sans-serif; font-size: 24px; letter-spacing: 0.06em; line-height: 1.2; padding: 4px 14px 2px; transform: rotate(-2deg)">Strength</figcaption>
-</figure>
-<figure style="flex: 1 1 240px; min-width: 0; margin: 0; position: relative; aspect-ratio: 4 / 5; border-radius: 20px; overflow: hidden; background: #24402F">
-<img src="assets/mobility-yoga.jpg" alt="Ishika balancing in a yoga pose on a mat, holding her raised foot" width="600" height="1068" loading="lazy" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%">
-<figcaption style="position: absolute; left: 14px; bottom: 16px; background: #F5E27A; color: #0F1E33; font-family: 'Bebas Neue', Impact, sans-serif; font-size: 24px; letter-spacing: 0.06em; line-height: 1.2; padding: 4px 14px 2px; transform: rotate(-2deg)">Mobility</figcaption>
-</figure>
-<figure style="flex: 1 1 240px; min-width: 0; margin: 0; position: relative; aspect-ratio: 4 / 5; border-radius: 20px; overflow: hidden; background: #24402F">
-<img src="assets/mindfulness-beach.jpg" alt="Ishika kneeling on the beach at sunset, eyes closed" width="600" height="1067" loading="lazy" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 35% 60%">
-<figcaption style="position: absolute; left: 14px; bottom: 16px; background: #F5E27A; color: #0F1E33; font-family: 'Bebas Neue', Impact, sans-serif; font-size: 24px; letter-spacing: 0.06em; line-height: 1.2; padding: 4px 14px 2px; transform: rotate(-2deg)">Mindfulness</figcaption>
-</figure>
 </div>
 </div>
 </div>
