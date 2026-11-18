@@ -19,6 +19,20 @@ body{margin:0}
 a{color:#2E5E3E}a:hover{color:#1C3326}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
 summary{cursor:pointer}
+.m-nav{display:none}
+.m-nav-btn{width:56px;height:56px;border:0;border-radius:999px;background:#F5E27A;color:#0F1E33;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 24px rgba(5,12,24,.45);transition:transform .15s ease}
+.m-nav-btn:active{transform:scale(.94)}
+.m-nav-btn:focus-visible{outline:3px solid #FFFFFF;outline-offset:3px}
+.m-nav-btn .i-close,.m-nav-btn[aria-expanded="true"] .i-menu{display:none}
+.m-nav-btn[aria-expanded="true"] .i-close{display:block}
+.m-nav-panel{position:absolute;right:0;bottom:68px;min-width:210px;background:#0F1E33;border:1px solid #2A4268;border-radius:20px;padding:8px;box-shadow:0 18px 40px rgba(5,12,24,.5);transform-origin:bottom right;animation:mnav-in .18s ease-out}
+.m-nav-panel[hidden]{display:none}
+.m-nav-panel nav{display:flex;flex-direction:column;gap:2px}
+.m-nav-panel a{color:#FFFFFF;text-decoration:none;font-weight:600;font-size:17px;padding:12px 16px;border-radius:12px}
+.m-nav-panel a:hover,.m-nav-panel a:focus-visible{background:#1D3359;color:#F5E27A;outline:none}
+@keyframes mnav-in{from{opacity:0;transform:translateY(8px) scale(.94)}to{opacity:1;transform:none}}
+@media (max-width: 720px){.m-nav{display:block;position:fixed;right:16px;bottom:16px;z-index:30}footer>div{padding-bottom:96px !important}}
+@media (prefers-reduced-motion: reduce){.m-nav-panel{animation:none}.m-nav-btn{transition:none}}
 header a{white-space:nowrap}
 @media (max-width: 720px){.nav-link{display:none}header>div{flex-wrap:nowrap !important;padding-top:10px !important;padding-bottom:10px !important;gap:12px !important}header>div>a:first-child{font-size:27px !important}header nav a{padding:10px 16px !important}}
 .seg{display:flex;gap:4px;padding:4px;border:1px solid;border-radius:999px}
@@ -353,6 +367,21 @@ Recipes on Instagram</a>
 </div>
 </footer>
 
+<div class="m-nav">
+<div id="m-nav-panel" class="m-nav-panel" hidden>
+<nav aria-label="Sections">
+<a href="#about">About</a>
+<a href="#programs">Programs</a>
+<a href="#how">How it works</a>
+<a href="#faq">FAQ</a>
+</nav>
+</div>
+<button type="button" id="m-nav-btn" class="m-nav-btn" aria-expanded="false" aria-controls="m-nav-panel" aria-label="Sections menu">
+<svg class="i-menu" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"></path></svg>
+<svg class="i-close" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+</button>
+</div>
+
 </div>
 <script>
 (function () {
@@ -383,6 +412,19 @@ Recipes on Instagram</a>
     update();
   });
 
+  var mBtn = document.getElementById('m-nav-btn');
+  var mPanel = document.getElementById('m-nav-panel');
+  if (mBtn && mPanel) {
+    function setOpen(open, focusBtn) {
+      mPanel.hidden = !open;
+      mBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) { mPanel.querySelector('a').focus(); } else if (focusBtn) { mBtn.focus(); }
+    }
+    mBtn.addEventListener('click', function () { setOpen(mPanel.hidden); });
+    mPanel.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !mPanel.hidden) setOpen(false, true); });
+    document.addEventListener('click', function (e) { if (!mPanel.hidden && !e.target.closest('.m-nav')) setOpen(false); });
+  }
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('[data-video-toggle]').forEach(function (b) {
     var v = document.getElementById(b.getAttribute('data-video-toggle'));
